@@ -1,5 +1,5 @@
 <?php
-function getConnection() {
+function getCRMConnection() {
   $dbconn = @pg_connect("host=db port=5432 dbname=CRM_db user=webonly password=scec");
 
   if (!$dbconn) { // try localhost
@@ -10,19 +10,16 @@ function getConnection() {
   return $dbconn;
 }
 
-function makeObj($row) {
-
-include ("declare.php");
+function makeGFMObj($row) {
+include ("declareGFM.php");
 
 $myObj = new \stdClass();
 
 $myObj->gid=$row[$gid];
 $myObj->domain_id=$row[$domain_id];
 $myObj->name=$row[$name];
-$myObj->silver=$row[$silver];
-$myObj->state=$row[$state];
+$myObj->sliver=$row[$sliver];
 $myObj->color=$row[$color];
-$myObj->TRACE_tb_gid=$row[$TRACE_tb_gid];
 
 $myJSON = json_encode($myObj);
 

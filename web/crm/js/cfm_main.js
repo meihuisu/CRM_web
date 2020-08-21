@@ -57,11 +57,12 @@ jQuery(document).ready(function() {
         }
   });     
 
-  getGeoTraceList();
-  getAllTraces();
-  setupSearch();
-  addFaultColorsSelect();
-  addDownloadSelect();
+// CFM 
+//  getGeoTraceList();
+//  getAllTraces();
+//  setupSearch();
+//  addFaultColorsSelect();
+//  addDownloadSelect();
     $("#search-type").change(function () {
         var funcToRun = $(this).val();
         if (funcToRun != "") {

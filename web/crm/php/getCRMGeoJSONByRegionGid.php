@@ -11,7 +11,7 @@ $dbconn = getConnection();
 
 $gid = $_GET['domain_gid'];
 
-$query = "select TRACE_tb_gid from REGION_tb where gid=".$gid;
+$query = "select CRM_TRACE_tb_gid from CRM_REGION_tb where gid=".$gid;
 $result = pg_query($dbconn, $query);
 
 $geomList=array();
