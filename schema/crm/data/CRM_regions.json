@@ -1,0 +1,26 @@
+{ "crm_regions": [
+{"id":1,"gfm_id":10,"name":"Peninsular Range (E)","state":1,"color":"#6A1B9A","ucolor":"purple"},
+{"id":2,"gfm_id":11,"name":"Gulf Rifted Margin","state":1,"color":"#D84315","ucolor":"dark orange"},
+{"id":3,"gfm_id":6,"name":"Peninsular Range (W)","state":1,"color":"#7B1FA2","ucolor":"purple"},
+{"id":4,"gfm_id":36,"name":"Oceanic Crust","state":1,"color":"#6C2DC7","ucolor":"dark purple"},
+{"id":5,"gfm_id":34,"name":"Accretionary Prism (S)","state":1,"color":"#347C17","ucolor":"green"},
+{"id":6,"gfm_id":27,"name":"Nicolas Terrane","state":1,"color":"#FFD801","ucolor":"yellow"},
+{"id":7,"gfm_id":25,"name":"Inner Borderland Rift","state":1,"color":"#FFA62F","ucolor":"light orange"},
+{"id":8,"gfm_id":13,"name":"Mojavia","state":1,"color":"#3090C7","ucolor":"blue"},
+{"id":9,"gfm_id":31,"name":"Rift Axis 1","state":1,"color":"#D462FF","ucolor":"violet"},
+{"id":10,"gfm_id":33,"name":"Rift Axis 3","state":1,"color":"#D462FF","ucolor":"violet"},
+{"id":11,"gfm_id":7,"name":"Basin and Range","state":1,"color":"#D84315","ucolor":"dark orange"},
+{"id":12,"gfm_id":28,"name":"Rift Axis 2","state":1,"color":"#D462FF","ucolor":"violet"},
+{"id":13,"gfm_id":12,"name":"San Gabriel","state":1,"color":"#3090C7","ucolor":"blue"},
+{"id":14,"gfm_id":23,"name":"Western Transverse Ranges","state":1,"color":"#FFD801","ucolor":"yellow"},
+{"id":15,"gfm_id":16,"name":"Salinia","state":1,"color":"#3090C7","ucolor":"blue"},
+{"id":16,"gfm_id":34,"name":"Accretionary Prism (N)","state":1,"color":"#347C17","ucolor":"green"},
+{"id":17,"gfm_id":29,"name":"San Francisco Bay","state":1,"color":"#347C17","ucolor":"green"},
+{"id":18,"gfm_id":18,"name":"Great Valley","state":1,"color":"#FFD801","ucolor":"yellow"},
+{"id":19,"gfm_id":9,"name":"Southern Walker Lane","state":1,"color":"#FF6F00","ucolor":"dark orange"},
+{"id":20,"gfm_id":3,"name":"Sierra Nevada (E)","state":1,"color":"#B041FF","ucolor":"purple"},
+{"id":21,"gfm_id":5,"name":"Sierra Nevada (W)","state":1,"color":"#4A148C","ucolor":"purple"},
+{"id":22,"gfm_id":20,"name":"Santa Maria Rift","state":1,"color":"#FFA62F","ucolor":"light orange"},
+{"id":23,"gfm_id":4,"name":"Colorado Plateau","state":1,"color":"#614051","ucolor":"brown"}
+]}
+

@@ -1,0 +1,18 @@
+FROM mdillon/postgis:10-alpine
+ENV POSTGRES_USER postgres
+ENV POSTGRES_DB CRM_db
+ENV PGDATA=/home/postgres/crm_db
+
+WORKDIR /app
+
+COPY . /app
+
+RUN mkdir /home/postgres
+RUN chown postgres /home/postgres
+RUN su postgres -c /app/setup/crm/run-as-postgres
+
+RUN echo "host all  all    0.0.0.0/0  trust" >> /home/postgres/crm_db/pg_hba.conf
+
+# RUN su postgres -c "pg_ctl -D /home/postgres/crm_db -l /home/postgres/logfile-crm_db start"
+
+

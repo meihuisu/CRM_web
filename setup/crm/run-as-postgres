@@ -1,0 +1,19 @@
+set -e
+
+# Perform all actions as $POSTGRES_USER
+export PGUSER="$POSTGRES_USER"
+
+# Carve out db space
+  initdb /home/postgres/crm_db
+
+# Start PostgreSQL server
+pg_ctl -D /home/postgres/crm_db -l /home/postgres/logfile-crm_db start
+
+/app/schema/crm/load_db_up
+
+  
+
+
+
+
+

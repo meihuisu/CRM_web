@@ -1,0 +1,23 @@
+
+:root {
+    /*font-size: 90%;*/
+}
+
+body, html {
+    font-family: Arial, sans-serif;
+    font-size: 10pt;
+}
+
+div.container.main {
+    min-width: 1140px;
+}
+
+input, select, .btn, .custom-select, .input-group-text {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
+
+.container-fluid.top {
+    padding: 0;
+}

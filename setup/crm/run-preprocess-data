@@ -1,0 +1,9 @@
+
+Files in schema/crm/data are being used by the sql scripts in schema/crm/sql to populate the
+CFM data server's postgres database
+
+Scripts are in schema/crm/scripts.
+json data scripts are in schema/crm/data
+
+When the T-surf files get updated, or moved depending on the changes, they might need to 
+be adjusted. 
