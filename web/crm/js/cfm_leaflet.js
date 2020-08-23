@@ -118,12 +118,12 @@ function setup_viewer()
   // }
   // mymap.on('click', onMapClick);
 
-  function onMapMouseOver(e) {
-    if(drawing_rectangle) {
-      draw_at();
-    }
-  }
-  mymap.on('mouseover', onMapMouseOver);
+ // function onMapMouseOver(e) {
+ //   if(drawing_rectangle) {
+ //     draw_at();
+ //   }
+ // }
+ // mymap.on('mouseover', onMapMouseOver);
 
 // ==> rectangle drawing control <==
 /*

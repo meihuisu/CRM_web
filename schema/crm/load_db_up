@@ -10,17 +10,20 @@ psql postgresql://postgres:example@localhost/CRM_db << AAA
   SELECT PostGIS_Version();
 
   \i '/home/postgres/CRM/schema/sql/CRM_polygon_traces.sql';
+  \i '/home/postgres/CRM/schema/sql/CTM_polygon_traces.sql';
   \i '/home/postgres/CRM/schema/sql/setup_schema.sql';
   \i '/home/postgres/CRM/schema/sql/load_crm_regions.sql';
   \i '/home/postgres/CRM/schema/sql/load_gfm_regions.sql';
+  \i '/home/postgres/CRM/schema/sql/load_ctm_regions.sql';
   \i '/home/postgres/CRM/schema/sql/linkup_crm_traces.sql';
+  \i '/home/postgres/CRM/schema/sql/linkup_ctm_traces.sql';
 
   DROP ROLE webonly;
   CREATE ROLE webonly WITH LOGIN PASSWORD 'scec';
   GRANT SELECT ON ALL TABLES IN SCHEMA public TO webonly;
   REVOKE CREATE ON SCHEMA public FROM PUBLIC;
 
-  SELECT UpdateGeometrySRID('trace_tb','geom',4326);
+  SELECT UpdateGeometrySRID('crm_trace_tb','geom',4326);
 
   \dp
   \q

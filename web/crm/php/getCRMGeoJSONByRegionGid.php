@@ -6,8 +6,8 @@
 
 <?php
 
-include ("util.php");
-$dbconn = getConnection();
+include ("utilCRM.php");
+$dbconn = getCRMConnection();
 
 $gid = $_GET['domain_gid'];
 
@@ -25,7 +25,7 @@ $tgids=explode(",",$data);
 
 foreach ($tgids as $tgid) {
    array_push($tgidList,intVal($tgid));
-   $nquery = "select gid, ST_AsGeoJSON(ST_TRANSFORM(TRACE_tb.geom,4326)) from TRACE_tb where gid=".$tgid;
+   $nquery = "select gid, ST_AsGeoJSON(ST_TRANSFORM(CRM_TRACE_tb.geom,4326)) from CRM_TRACE_tb where gid=".$tgid;
    $nresult = pg_query($dbconn, $nquery);
    $nrow = pg_fetch_row($nresult);
    array_push($geomList, $nrow[1]);

@@ -8,7 +8,7 @@ function processCRMTraceMeta(metaList) {
     var str="";
 
     if (metaList == 'metaByAllTraces') {
-        str = $('[data-side="allTraces"]').data('params');
+        str = $('[data-side="allCRMTraces"]').data('params');
     }
 
     if(str == undefined || str == "") {
@@ -26,13 +26,13 @@ function processCRMTraceMeta(metaList) {
        var gid=parseInt(gidstr);
 
        // update Traces_tb_gid to be array
-       var t=meta['TRACE_tb_gid']; 
+       var t=meta['CRM_TRACE_tb_gid']; 
        if(t == "{}")
           continue;
        var nt=t.replace('{','[');
        var nnt=nt.replace('}',']');
        var trace_tb_gid=JSON.parse(nnt);
-       meta['TRACE_tb_gid']=trace_tb_gid;
+       meta['CRM_TRACE_tb_gid']=trace_tb_gid;
 
        if(metaList == 'metaByAllTraces') {
          crm_region_meta_list.push({"gid":gid, "meta": meta });

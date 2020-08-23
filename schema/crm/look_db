@@ -1,0 +1,2 @@
+psql postgresql://postgres:example@localhost/CRM_db
+

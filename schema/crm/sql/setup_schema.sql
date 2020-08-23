@@ -7,6 +7,17 @@ CREATE TABLE POINT_tb (
      description VARCHAR(200)
 );
 
+CREATE TABLE CTM_REGION_tb (
+     gid serial PRIMARY KEY,
+     CTM_TRACE_tb_gid integer ARRAY,
+
+     domain_id INTEGER,
+     name VARCHAR(100),
+     full_name VARCHAR(100),
+     color VARCHAR(50),
+     description VARCHAR(200)
+);
+
 CREATE TABLE GFM_REGION_tb (
      gid serial PRIMARY KEY,
 

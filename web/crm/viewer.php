@@ -67,12 +67,8 @@ $header = getHeader("Viewer");
     <!-- cfm js -->
     <script type="text/javascript" src="js/debug.js?v=1"></script>
     <script type="text/javascript" src="js/cfm_leaflet.js?v=1"></script>
-    <script type="text/javascript" src="js/cfm_layer.js?v=1"></script>
-    <script type="text/javascript" src="js/cfm_util.js?v=1"></script>
-    <script type="text/javascript" src="js/cfm_ui.js?v=1"></script>
     <script type="text/javascript" src="js/cfm_main.js?v=1"></script>
     <script type="text/javascript" src="js/cfm_query.js?v=1"></script>
-    <script type="text/javascript" src="js/cfm_sidebar.js?v=1"></script>
    
     <script type="text/javascript" src="js/gfm_region.js?v=1"></script>
     <script type="text/javascript" src="js/cfm_misc_util.js?v=1"></script>
@@ -90,6 +86,10 @@ $header = getHeader("Viewer");
 <!-- MISC -->
 <div id="misc_tools">
   <div class="row">
+<!--
+     <button id="loadCFMGeoBtn" class="btn cfm-small-btn"  onClick="loadCFMRegions()" disabled>
+                <span class="glyphicon glyphicon-arrow-down"></span> Load CFM geoJson</button>
+-->
      <button id="loadCRMGeoBtn" class="btn cfm-small-btn"  onClick="loadCRMRegions()">
                 <span class="glyphicon glyphicon-arrow-down"></span> Load CRM geoJson</button>
      <button id="loadCTMGeoBtn" class="btn cfm-small-btn"  onClick="loadCTMRegions()">
@@ -105,8 +105,10 @@ $header = getHeader("Viewer");
             <span class="glyphicon glyphicon-file"></span> Select Latlon csv file to load</button>
   </div>
   <div class="row">
-     <button id="dumpCFMGeoBtn" class="btn cfm-small-btn"  onClick="dumpActiveCFMGeo()">
+<!--
+     <button id="dumpCFMGeoBtn" class="btn cfm-small-btn"  onClick="dumpActiveCFMGeo()" disabled>
                 <span class="glyphicon glyphicon-share-alt"></span> Export CFM geoJson</button>
+-->
      <button id="dumpCRMGeoBtn" class="btn cfm-small-btn"  onClick="dumpActiveCRMGeo()">
                 <span class="glyphicon glyphicon-share-alt"></span> Export CRM geoJson</button>
      <button id="dumpCTMGeoBtn" class="btn cfm-small-btn"  onClick="dumpActiveCTMGeo()">
@@ -138,7 +140,7 @@ $header = getHeader("Viewer");
     </div>
 </div>
 <div class="row mapData">
-    <div class="col-3 button-container d-flex flex-column" style="overflow:hidden;">
+    <div class="col-3 button-container d-flex flex-column">
       <div id="searchResult" style="overflow:hidden;" class="mb-1"> </div>
       <div id="geoSearchByObjGidResult" style="display:none"></div>
       <div id="phpResponseTxt"></div>

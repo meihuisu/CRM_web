@@ -21,11 +21,11 @@ tb=jdata["CRM_tb"]
 rlist= tb["regions"]
 for item in rlist :
    id=str(item['domain_id'])
-   gfm_id=str(item['gfm_id'])
+   GFM_REGION_tb_gid=str(item['gfm_id'])
    name=item['name']
    color=item['color']
 
-   string="INSERT INTO CRM_REGION_tb (\"domain_id\",\"gfm_id\",\"name\",\"color\") VALUES ("+id+","+gfm_id+",\'" +name+"\',\'"+color+"\');"
+   string="INSERT INTO CRM_REGION_tb (\"domain_id\",\"gfm_region_tb_gid\",\"name\",\"color\") VALUES ("+id+","+GFM_REGION_tb_gid+",\'" +name+"\',\'"+color+"\');"
    fout.write(string);
    fout.write("\n");
 

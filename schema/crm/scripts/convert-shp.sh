@@ -8,3 +8,6 @@ pwd=`pwd`
 #CRM_db
 shp2pgsql -I -s GCS_WGS_1984 $pwd/../CRM_polygons_domains/CRM_polygons_domains crm_trace_tb > CRM_polygon_traces.sql
 
+#CTM_db
+shp2pgsql -I -s GCS_WGS_1984 $pwd/../CTM_polygons_2020/ctm_polygon-point ctm_trace_tb > CTM_polygon_traces.sql
+
