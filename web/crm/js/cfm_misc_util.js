@@ -207,7 +207,7 @@ function loadCRMRegions() {
 
 //domain,xcoord,ycoord
 //Peninsular Range (E),-114.53244,29.43361
-function readAndProcessActiveLatlon(urls) {
+function readAndLoadActiveLatlon(urls) {
   var reader = new FileReader();
 
   reader.onload=function(event) {
@@ -242,13 +242,14 @@ function readAndProcessActiveLatlon(urls) {
            } 
        }   
     }  
-    return makeRawLatlonGroup(fdata);
-
+    let group=makeRawLatlonGroup(fdata, 1);
+    mymap.addLayer(group);
+    return group;
   };
   reader.readAsText(urls[0]);
 }
 
-function readLocalAndProcessActiveLatlon() {
+function readAndLoadLocalActiveLatlon() {
 
   var url="data/CRM_polygons_points_with_corrected_Rift_names_Mar112019.csv";
   var blob=ckExist(url);
@@ -282,16 +283,21 @@ function readLocalAndProcessActiveLatlon() {
          } 
      }   
   }  
-  return makeRawLatlonGroup(fdata);
+  let group=makeRawLatlonGroup(fdata, 0);
+  mymap.addLayer(group);
+
+  return group;
 }
 
+/***???
 function addRawLatlonGroupToMap(fdataList, mymap) {
-   var group=makeRawLatlonGroup(fdataList);
+   var group=makeRawLatlonGroup(fdataList, 0);
    mymap.addLayer(group);
    return group;
 }
+***/
 
-function makeRawLatlonGroup(fdataList) {
+function makeRawLatlonGroup(fdataList, isheat) {
    var cnt=fdataList.length;
    window.console.log("number of importing points ",cnt);
    var group = L.layerGroup();
@@ -303,7 +309,12 @@ function makeRawLatlonGroup(fdataList) {
      var lon=parseFloat(item[1]);
      var lat=parseFloat(item[2]);
     
-     var color=getRegionColorWithName(name);
+     var color=getHeatRegionColorWithName(name);
+     if( isheat) {
+       var color=getHeatRegionColorWithName(name);
+       } else {
+         var color=getRegionColorWithName(name);
+     }
      if(color == undefined) {
         window.console.log("BAD -- no color for ", name);
         continue;
@@ -341,6 +352,26 @@ const newIcon = L.divIcon({
 
    } 
    return group;
+}
+
+
+// >>Synchronous XMLHttpRequest on the main thread is deprecated
+// >>because of its detrimental effects to the end user's experience.
+//     url=http://localhost/data/synapse/segments-dummy.csv
+function ckExist(url) {
+  var http = new XMLHttpRequest();
+  http.onreadystatechange = function () {
+    if (this.readyState == 4) {
+ // okay
+    }
+  }
+  http.open("GET", url, false);
+  http.send();
+  if(http.status !== 404) {
+    return http.responseText;
+    } else {
+      return null;
+  }
 }
 
 

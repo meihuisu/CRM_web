@@ -20,4 +20,17 @@ function makeHeatRegionsInfoTable() {
    return tbhtml;
 }
 
+function getHeatRegionColorWithName(name) {
+   var tb=CTM_tb['regions'];
+   var cnt=tb.length;
+   var i;
+   for(i=0; i<cnt;i++) {
+      var region=tb[i];
+      if(region['name'] == name)
+        return region['color'];
+   }
+   return undefined;
+}
+
+
 

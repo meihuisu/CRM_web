@@ -71,12 +71,18 @@ $header = getHeader("Viewer");
     <script type="text/javascript" src="js/cfm_query.js?v=1"></script>
    
     <script type="text/javascript" src="js/gfm_region.js?v=1"></script>
+    <script type="text/javascript" src="js/gfm_region_util.js?v=1"></script>
     <script type="text/javascript" src="js/cfm_misc_util.js?v=1"></script>
+
+<!-- ctm js --> 
+    <script type="text/javascript" src="js/ctm_region.js"></script>
+    <script type="text/javascript" src="js/ctm_region_util.js"></script>
  
 <!-- crm js --> 
     <script type="text/javascript" src="js/crm_util.js?v=1"></script>
     <script type="text/javascript" src="js/crm_query.js?v=1"></script>
     <script type="text/javascript" src="js/crm_layer.js?v=1"></script>
+
 </head>
 <body>
 <?php echo $header; ?>
@@ -95,15 +101,19 @@ $header = getHeader("Viewer");
      <button id="loadCTMGeoBtn" class="btn cfm-small-btn"  onClick="loadCTMRegions()">
                 <span class="glyphicon glyphicon-arrow-down"></span> Load CTM geoJson</button>
 
+     <button id="loadLatLongBtn" class="btn cfm-small-btn"  onClick="readAndLoadLocalActiveLatlon()">
+                <span class="glyphicon glyphicon-arrow-down"></span> Load local Latlong file</button>
+
 
      <input class="form-control" id='fileGeoJsonBtn' type='file' onchange='readAndProcessActiveGeo(this.files)'  style='display:none;'>
      <button class="btn cfm-small-btn" title="open a geoJson file to ingest" onclick='javascript:document.getElementById("fileGeoJsonBtn").click();'>
             <span class="glyphicon glyphicon-file"></span> Select geoJson file to load</button>
 
-     <input class="form-control" id='fileLatlonBtn' type='file' onchange='readAndProcessActiveLatlon(this.files)'  style='display:none;'>
+     <input class="form-control" id='fileLatlonBtn' type='file' onchange='readAndLoadActiveLatlon(this.files)'  style='display:none;'>
      <button class="btn cfm-small-btn" title="open a Latlon file to ingest" onclick='javascript:document.getElementById("fileLatlonBtn").click();'>
             <span class="glyphicon glyphicon-file"></span> Select Latlon csv file to load</button>
   </div>
+
   <div class="row">
 <!--
      <button id="dumpCFMGeoBtn" class="btn cfm-small-btn"  onClick="dumpActiveCFMGeo()" disabled>
