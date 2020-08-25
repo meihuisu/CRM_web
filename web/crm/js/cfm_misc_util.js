@@ -50,6 +50,25 @@ function dumpActiveCRMGeo() {
   }
 }
 
+function dumpActiveCTMGeo() {
+  var tracelist = [];
+  var labellist = [];
+
+  var tsz=ctm_trace_list.length;
+  for(var i=0; i< tsz; i++) {
+    var titem=ctm_trace_list[i];
+    var gid=titem['gid'];
+    var tracename=find_ctm_name_by_gid(gid);
+    var atrace=titem['trace'];
+    // either all, or has a active list
+    labellist.push(tracename);
+    tracelist.push(atrace);
+  }
+  if(tracelist.length) {
+    dumpActiveGeo("CTM_geoJson.txt", tracelist, labellist);
+  }
+}
+
 function dumpActiveGeo(dumpname, trace_list, label_list) {
 
   var tsz=trace_list.length;

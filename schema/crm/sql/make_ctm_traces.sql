@@ -1,8 +1,5 @@
-
 SET CLIENT_ENCODING TO UTF8;
 SET STANDARD_CONFORMING_STRINGS TO ON;
-
-drop table ctm_trace_tb;
 
 CREATE TABLE ctm_trace_tb (
    gid    serial PRIMARY KEY,

@@ -10,6 +10,15 @@ var crm_region_meta_list=[];
 // [ {"gid": gid1, "trace": trace1 }, {"gid":gid2, "trace":trace2}... ], only with geo
 var crm_trace_list=[];
 
+// all region gid ==> gid from region_tb
+//  [ { "gid": gid1,  "meta": mmm1 }, {  "gid": gid2, "meta": mmm2 }, ... }
+var ctm_region_meta_list=[];
+
+// gid is regiongid, trace is leaflet feature (1 per layer)
+// [ {"gid": gid1, "trace": trace1 }, {"gid":gid2, "trace":trace2}... ], only with geo
+var ctm_trace_list=[];
+
+
 function find_crm_name_by_gid(gid) {
    var cnt=crm_region_meta_list.length;
    for(var i=0; i<cnt; i++) {
@@ -17,6 +26,18 @@ function find_crm_name_by_gid(gid) {
      if(item['gid'] == gid) {
         var meta=item['meta'];
         return meta['name'];
+     }
+   }
+   return "NA";
+}
+
+function find_ctm_name_by_gid(gid) {
+   var cnt=ctm_region_meta_list.length;
+   for(var i=0; i<cnt; i++) {
+     var item=ctm_region_meta_list[i];
+     if(item['gid'] == gid) {
+        var meta=item['meta'];
+        return meta['full_name'];
      }
    }
    return "NA";
@@ -63,7 +84,6 @@ function makeGeoJSONFeature(geoJSON, gid, meta) {
 
     a_trace.features.push(tmp);
   }
-  crm_trace_list.push({"gid":gid, "trace":a_trace});
 
   return a_trace;
 }

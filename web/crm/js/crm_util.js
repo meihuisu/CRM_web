@@ -80,15 +80,16 @@ function processCTMTraceMeta(metaList) {
 
        // update Traces_tb_gid to be array
        var t=meta['CTM_TRACE_tb_gid']; 
-       if(t == "{}")
+       if(t == "{}") {
           continue;
+       }
        var nt=t.replace('{','[');
        var nnt=nt.replace('}',']');
        var trace_tb_gid=JSON.parse(nnt);
        meta['CTM_TRACE_tb_gid']=trace_tb_gid;
 
        if(metaList == 'metaByAllTraces') {
-         crm_region_meta_list.push({"gid":gid, "meta": meta });
+         ctm_region_meta_list.push({"gid":gid, "meta": meta });
          getCTMGeoJSONbyObjGid(gidstr,meta);
          } else {
             window.console.log("BAD ??");

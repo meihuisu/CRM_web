@@ -37,8 +37,10 @@ function getCTMGeoJSONbyObjGid(gidstr, meta) {
             var geoJSONList=grabGeoJSONList();
             var gid=parseInt(gidstr);
             var trace=makeGeoJSONFeature(geoJSONList, gid, meta);
-            if(trace != undefined)
+            if(trace != undefined) {
+              ctm_trace_list.push({"gid":gid, "trace":trace});
               addGeoToMap(trace, viewermap);  //add straight
+            }
         }    
     }; 
     xmlhttp.open("GET","php/getCTMGeoJSONByRegionGid.php?domain_gid="+gidstr,true);
@@ -85,8 +87,10 @@ function getCRMGeoJSONbyObjGid(gidstr, meta) {
             var geoJSONList=grabGeoJSONList();
             var gid=parseInt(gidstr);
             var trace=makeGeoJSONFeature(geoJSONList, gid, meta);
-            if(trace != undefined)
+            if(trace != undefined) {
+              crm_trace_list.push({"gid":gid, "trace":trace});
               addGeoToMap(trace, viewermap);  //add straight
+            }
         }     
     };  
     xmlhttp.open("GET","php/getCRMGeoJSONByRegionGid.php?domain_gid="+gidstr,true);

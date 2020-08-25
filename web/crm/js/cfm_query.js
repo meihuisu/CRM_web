@@ -509,8 +509,10 @@ function getGeoJSONbyObjGid(gidstr, meta) {
             var geoBlindList=grabTraceBlindList();
             var gid=parseInt(gidstr);
             var trace=makeGeoJSONFeature(geoJSONList, geoBlindList, gid, meta);
-            if(trace != undefined)
+            if(trace != undefined) {
+              cfm_trace_list.push({"gid":gid, "trace":trace});
               load_a_trace(gid,trace);
+            }
         }     
     };  
     xmlhttp.open("GET","php/getGeoJSONbyObjGid.php?obj_gid="+gidstr,true);
