@@ -101,10 +101,11 @@ $header = getHeader("Viewer");
      <button id="loadCTMGeoBtn" class="btn cfm-small-btn"  onClick="loadCTMRegions()">
                 <span class="glyphicon glyphicon-arrow-down"></span> Load CTM geoJson</button>
 
+
      <button id="loadLatLongBtn" class="btn cfm-small-btn"  onClick="readAndLoadLocalActiveLatlon()">
                 <span class="glyphicon glyphicon-arrow-down"></span> Load local Latlong file</button>
-
-
+  </div>
+  <div class="row">
      <input class="form-control" id='fileGeoJsonBtn' type='file' onchange='readAndProcessActiveGeo(this.files)'  style='display:none;'>
      <button class="btn cfm-small-btn" title="open a geoJson file to ingest" onclick='javascript:document.getElementById("fileGeoJsonBtn").click();'>
             <span class="glyphicon glyphicon-file"></span> Select geoJson file to load</button>

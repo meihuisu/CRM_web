@@ -23,12 +23,12 @@ function find_crm_name_by_gid(gid) {
 }
 
 // create a feature with a geoJSON or a geoJSONList, 
-function makeCRMGeoJSONFeature(geoJSON, gid, meta) {
+function makeGeoJSONFeature(geoJSON, gid, meta) {
 
   var blob=[];
 
   if(geoJSON == undefined) {
-    window.console.log("makeCRMGeoJSONFeature, geoJSON is null for ", gid);
+    window.console.log("makeGeoJSONFeature, geoJSON is null for ", gid);
     return undefined;
   }
 

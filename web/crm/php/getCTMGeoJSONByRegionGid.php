@@ -6,12 +6,12 @@
 
 <?php
 
-include ("utilCRM.php");
-$dbconn = getCRMConnection();
+include ("utilCTM.php");
+$dbconn = getCTMConnection();
 
 $gid = $_GET['domain_gid'];
 
-$query = "select CRM_TRACE_tb_gid from CRM_REGION_tb where gid=".$gid;
+$query = "select CTM_TRACE_tb_gid from CTM_REGION_tb where gid=".$gid;
 $result = pg_query($dbconn, $query);
 
 $geomList=array();
@@ -24,9 +24,8 @@ $data = substr($glist,1,-1);
 $tgids=explode(",",$data);
 
 foreach ($tgids as $tgid) {
-   echo $tgid;
    array_push($tgidList,intVal($tgid));
-   $nquery = "select gid, ST_AsGeoJSON(ST_TRANSFORM(CRM_TRACE_tb.geom,4326)) from CRM_TRACE_tb where gid=".$tgid;
+   $nquery = "select gid, ST_AsGeoJSON(ST_TRANSFORM(CTM_TRACE_tb.geom,4326)) from CTM_TRACE_tb where gid=".$tgid;
    $nresult = pg_query($dbconn, $nquery);
    $nrow = pg_fetch_row($nresult);
    array_push($geomList, $nrow[1]);

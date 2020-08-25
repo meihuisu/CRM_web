@@ -205,6 +205,10 @@ function loadCRMRegions() {
   getCRMAllTraces();
 }
 
+function loadCTMRegions() {
+  getCTMAllTraces();
+}
+
 //domain,xcoord,ycoord
 //Peninsular Range (E),-114.53244,29.43361
 function readAndLoadActiveLatlon(urls) {
