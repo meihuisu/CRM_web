@@ -9,7 +9,7 @@ SELECT AddGeometryColumn('','ctm_trace_tb','geom','4326','MULTIPOLYGON',2);
 
 INSERT INTO ctm_trace_tb (gid, geom) 
     SELECT CAST(gps.id AS INTEGER),
-         ST_SetSRID(ST_Multi(ST_MakePolygon(ST_MakeLine(gps.geom))),'4326')
+         ST_SetSRID(ST_Multi(ST_MakePolygon(ST_makevalid( ST_MakeLine(gps.geom) ))),'4326')
     FROM ctm_point_trace_tb AS gps
     GROUP BY gps.id; 
 

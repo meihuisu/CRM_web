@@ -38,7 +38,12 @@ function getCTMGeoJSONbyObjGid(gidstr, meta) {
             var gid=parseInt(gidstr);
             var trace=makeGeoJSONFeature(geoJSONList, gid, meta);
             if(trace != undefined) {
-              ctm_trace_list.push({"gid":gid, "trace":trace});
+             if(gid > 14) {
+                ctm_trace_list.unshift({"gid":gid, "trace":trace});
+                } else {
+                  ctm_trace_list.push({"gid":gid, "trace":trace});
+              }
+              window.console.log("grabbing CTM trace --", gid);
               addGeoToMap(trace, viewermap);  //add straight
             }
         }    

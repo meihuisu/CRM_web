@@ -227,6 +227,7 @@ function addGeoToMap(cfmTrace, mymap) {
   });
 ***/
 
+/*
     geoLayer.on('mouseover', function(e){
         if (mymap && !drawing_rectangle) {
             e.layer.setStyle({weight: 5});
@@ -238,6 +239,7 @@ function addGeoToMap(cfmTrace, mymap) {
            e.layer.setStyle({weight: 2});
        }
    });
+*/
 
   return geoLayer;
 }

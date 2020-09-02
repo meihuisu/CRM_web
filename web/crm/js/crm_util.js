@@ -89,7 +89,11 @@ function processCTMTraceMeta(metaList) {
        meta['CTM_TRACE_tb_gid']=trace_tb_gid;
 
        if(metaList == 'metaByAllTraces') {
-         ctm_region_meta_list.push({"gid":gid, "meta": meta });
+         if(gid > 14) {
+            ctm_region_meta_list.unshift({"gid":gid, "meta": meta });
+            } else {
+               ctm_region_meta_list.push({"gid":gid, "meta": meta });
+         }
          getCTMGeoJSONbyObjGid(gidstr,meta);
          } else {
             window.console.log("BAD ??");

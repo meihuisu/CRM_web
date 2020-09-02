@@ -60,6 +60,7 @@ function dumpActiveCTMGeo() {
     var gid=titem['gid'];
     var tracename=find_ctm_name_by_gid(gid);
     var atrace=titem['trace'];
+    window.console.log("dumping ctm..",tracename);
     // either all, or has a active list
     labellist.push(tracename);
     tracelist.push(atrace);
